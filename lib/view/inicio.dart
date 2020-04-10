@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:widgets/main.dart';
 import 'package:widgets/widgets_custom/accion.dart';
+
+// INICIO  //
 
 class Inicio extends StatelessWidget {
   final titulo = TextStyle(fontWeight: FontWeight.bold,fontSize: 25.0);
@@ -7,47 +10,60 @@ class Inicio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
         appBar: AppBar( //MENU IZQIERDO
           elevation : 0.0,
           leading: IconButton(
-      icon: Icon(Icons.menu),
-      tooltip: 'Navigation menu',
+      icon: Icon(Icons.menu, color: Colors.black,), //color de menu negro.
       onPressed: null,
     ),
 
     actions: <Widget>[ //ICONOS BUSCAR.. DERECHOS.
     IconButton(
-        icon: Icon(Icons.favorite),
-        tooltip: 'favorite',
+        icon: Icon(Icons.favorite_border, color: Colors.black,),
+        color: Colors.black,
+        tooltip: 'favorite',   
         onPressed: null,
       ),
       IconButton(
-        icon: Icon(Icons.share),
+        icon: Icon(Icons.share, color: Colors.black,),
         tooltip: 'share',
         onPressed: null,
       ),
       IconButton(
-        icon: Icon(Icons.search),
+        icon: Icon(Icons.search,color: Colors.black,),
         tooltip: 'Search',
         onPressed: null,
       ),
     ],
-
-          title: Text('Producto'),  // TEXTO CENTRAL SUPERIOR (producto).
-          
+          title: Text('Producto'),  // TEXTO CENTRAL SUPERIOR (producto).   
         ),
         body: SingleChildScrollView(
-                  child: Container(
+                  child: Container(      
             child: Column(
+
               children: <Widget>[
-                
-                Text("Enviar a Duba Ruales - Cra 9 #25-86 >",style: subtitulo,),
-                Image.network("https://http2.mlstatic.com/portatil-acer-nitro-an515-52-53lp-core-i5-8300h-8gb-1tb-12-D_NQ_NP_966963-MCO32907249668_112019-F.webp"),
-                _seccion1(),
+                AspectRatio(aspectRatio: 3/0.2,  //cuadro de color amarillo.
+                child: new Container(
+                  child: Gps(),   //icono ubicacion y enviar a duban...
+                  color: Colors.yellow[600],
+                  )
+                ),
+                //Gps(), //ENCABEZADO de ubicacion y a quien eviarle...
+                //Text("  Enviar a Duba Bladimir Ruales Ortega - Cra 9 #25-86 >",style: subtitulo,), SizedBox(height: 10,),
+                Image.network("https://image.jimcdn.com/app/cms/image/transf/none/path/s6d7954848f1c7d92/image/i97e56a3ac5e06f6c/version/1586499583/image.jpg"),
+            //Image.network("https://http2.mlstatic.com/portatil-acer-nitro-an515-52-53lp-core-i5-8300h-8gb-1tb-12-D_NQ_NP_966963-MCO32907249668_112019-F.webp"),
+            AspectRatio(aspectRatio: 3/5,  //cuadro de color gris, parte de abajo.
+                child: new Container(
+                  child:_seccion1(), //datos desde 35 vendidos...
+                  //child: Gps(),
+                  color: Colors.grey[200],
+                  )
+                ),
+                //_seccion1(),
                 //Accion(),
-                _crearTexto() //texto en la app
+                //Opiniones(),//crea las estrellas de amarillo
+                //_crearTexto() //texto en la app parte final
               ],
             ),
           ),
@@ -55,41 +71,64 @@ class Inicio extends StatelessWidget {
       );
   }
 
+
+
+
   Widget _seccion1(){
     return  Container(
       //
-            padding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 15.0),
+            padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10.0, ),
             child: Row(
               children: <Widget>[
+              
                 Expanded(
                   child:  Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text("35 vendidos",style: subtitulo,),
-                    SizedBox(height: 5.0,),
-                    Text("Portatil Acer 53Ip Core I5 8va 1tb+128gb Ssd Gtx 1050 4gb", style: titulo,),
-                    SizedBox(height: 6.0,),
-                    Text("por Acer",style: subtitulo,), SizedBox(height: 12.0,),
-                  Icon(Icons.star, size: 20, color: Colors.yellow,), SizedBox(height: 12.0,),  //size: 48.0, 
-                  //Text("45"),
-            
-                  //
-                  Text(" 3.699.000 ",  style: titulo,),
-                  Text("Disponible en 2 dias a partir de tu compra", style: subtitulo,),
-                    SizedBox(height: 12.0,),
-                  Text("@   36x 102.750", style: subtitulo,),
-                    SizedBox(height: 12.0,),
-                  Text("@   Envio gratis # 14.000", style: subtitulo,),
-                  Text("      Llega entre el 1 y el 3 de abril", style: subtitulo,),
-                  Text("      Benefico mercado puntos", style: subtitulo,),
-
-
-SizedBox(height: 700.0,),//SEPARADO DE APP
+                    Text(" 35 vendidos",style: subtitulo,),
+                    SizedBox(height: 10,),
+                    Text("Portatil Acer 53Ip Core I5 8va 1tb+128gb Ssd Gtx 1050 4gb", style: TextStyle(color: Colors.grey[800],fontSize: 27,)),
+                    SizedBox(height: 7,),
+                    Text(" por Acer",style: subtitulo,), SizedBox(height: 12,),
+          
+                  Opiniones(),//Estrellas amarillas de opiniones ...
+                  SizedBox(height: 12.0,),
+                
+                //Text("45"),
+                //SizedBox(height: 12.0,),
+                  //Icon(Icons.star, size: 20, color: Colors.yellow,), SizedBox(height: 12.0,),
+             //
+                  Pesos(), //Icono pesos para precio del producto...
+                  //Text(" 3.699.000 ", style: TextStyle(fontSize: 27,)),
+                  SizedBox(height: 2,),
+                  Text("  Disponible en 2 dias a partir de tu compra", style: TextStyle(color: Colors.orange[800],fontSize: 14,)),
+                    SizedBox(height: 21,),
+                  Target(), SizedBox(height: 10,), //Creacion icono targeta credito y texto...
+  
+                AspectRatio(aspectRatio: 100/0.4,  //cuadro de color gris, parte de abajo.
+                child: new Container(
+                  color: Colors.grey[300],
+                  )
+                ),
+                   SizedBox(height: 10,),
+                      Veiculo(), //Crear icono de carro para el envio...
+                      SizedBox(height: 6,),
+                  Text("          Llega entre el 1 y el 3 de abril",style: subtitulo,),
+                  SizedBox(height: 6,),
+                    Text("          Beneficio mercado puntos", style: subtitulo,),
+              SizedBox(height: 25,),//
+                MaterialButton(
+            minWidth: 380.0,
+            height: 57,
+            onPressed: () {},
+            color: Colors.blue[600],
+            child: Text('Comprar', style: TextStyle(color: Colors.white,fontSize: 18.5,)),
+              ),
+              SizedBox(height: 40,),//SEPARADO DE APP     
+                _crearTexto(),
                   ],
-                    
                 ), 
                 ),
-              
             ],),
           );
   }
@@ -99,11 +138,12 @@ SizedBox(height: 700.0,),//SEPARADO DE APP
 
   Widget _crearTexto(){
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 15.0),
+      padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 5),
       child: Column(
         children: <Widget>[
-          Text("Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32."),
-          Text("Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32."),
+          Text("DESCRIPCION: \n Explora y disfruta un nuevo nivel de Gaming más inmersivo con la pantalla Full HD y la potente tecnología del Nitro 5.\n\n ",
+          style: TextStyle(color: Colors.black54,fontSize: 14,)),
+          
         ],
       ),
     );
