@@ -7,7 +7,6 @@ import 'package:widgets/widgets_custom/accion.dart';
 class Inicio extends StatelessWidget {
   final titulo = TextStyle(fontWeight: FontWeight.bold,fontSize: 25.0);
   final subtitulo = TextStyle(color: Colors.grey, fontSize: 15.0);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +16,6 @@ class Inicio extends StatelessWidget {
       icon: Icon(Icons.menu, color: Colors.black,), //color de menu negro.
       onPressed: null,
     ),
-
     actions: <Widget>[ //ICONOS BUSCAR.. DERECHOS.
     IconButton(
         icon: Icon(Icons.favorite_border, color: Colors.black,),
@@ -41,7 +39,6 @@ class Inicio extends StatelessWidget {
         body: SingleChildScrollView(
                   child: Container(      
             child: Column(
-
               children: <Widget>[
                 AspectRatio(aspectRatio: 3/0.2,  //cuadro de color amarillo.
                 child: new Container(
@@ -49,21 +46,14 @@ class Inicio extends StatelessWidget {
                   color: Colors.yellow[600],
                   )
                 ),
-                //Gps(), //ENCABEZADO de ubicacion y a quien eviarle...
-                //Text("  Enviar a Duba Bladimir Ruales Ortega - Cra 9 #25-86 >",style: subtitulo,), SizedBox(height: 10,),
                 Image.network("https://image.jimcdn.com/app/cms/image/transf/none/path/s6d7954848f1c7d92/image/i97e56a3ac5e06f6c/version/1586499583/image.jpg"),
-            //Image.network("https://http2.mlstatic.com/portatil-acer-nitro-an515-52-53lp-core-i5-8300h-8gb-1tb-12-D_NQ_NP_966963-MCO32907249668_112019-F.webp"),
-            AspectRatio(aspectRatio: 3/5,  //cuadro de color gris, parte de abajo.
+            AspectRatio(aspectRatio: 3/5,  /////
                 child: new Container(
                   child:_seccion1(), //datos desde 35 vendidos...
                   //child: Gps(),
                   color: Colors.grey[200],
                   )
                 ),
-                //_seccion1(),
-                //Accion(),
-                //Opiniones(),//crea las estrellas de amarillo
-                //_crearTexto() //texto en la app parte final
               ],
             ),
           ),
@@ -73,14 +63,12 @@ class Inicio extends StatelessWidget {
 
 
 
-
   Widget _seccion1(){
     return  Container(
       //
             padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10.0, ),
             child: Row(
               children: <Widget>[
-              
                 Expanded(
                   child:  Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,21 +78,14 @@ class Inicio extends StatelessWidget {
                     Text("Portatil Acer 53Ip Core I5 8va 1tb+128gb Ssd Gtx 1050 4gb", style: TextStyle(color: Colors.grey[800],fontSize: 27,)),
                     SizedBox(height: 7,),
                     Text(" por Acer",style: subtitulo,), SizedBox(height: 12,),
-          
                   Opiniones(),//Estrellas amarillas de opiniones ...
                   SizedBox(height: 12.0,),
-                
-                //Text("45"),
-                //SizedBox(height: 12.0,),
-                  //Icon(Icons.star, size: 20, color: Colors.yellow,), SizedBox(height: 12.0,),
-             //
+              
                   Pesos(), //Icono pesos para precio del producto...
-                  //Text(" 3.699.000 ", style: TextStyle(fontSize: 27,)),
                   SizedBox(height: 2,),
                   Text("  Disponible en 2 dias a partir de tu compra", style: TextStyle(color: Colors.orange[800],fontSize: 14,)),
                     SizedBox(height: 21,),
-                  Target(), SizedBox(height: 10,), //Creacion icono targeta credito y texto...
-  
+                  Target(), SizedBox(height: 10,), //Creacion icono targeta credito y texto..
                 AspectRatio(aspectRatio: 100/0.4,  //cuadro de color gris, parte de abajo.
                 child: new Container(
                   color: Colors.grey[300],
@@ -124,7 +105,7 @@ class Inicio extends StatelessWidget {
             color: Colors.blue[600],
             child: Text('Comprar', style: TextStyle(color: Colors.white,fontSize: 18.5,)),
               ),
-              SizedBox(height: 40,),//SEPARADO DE APP     
+              SizedBox(height: 40,),/////   
                 _crearTexto(),
                   ],
                 ), 
@@ -132,7 +113,6 @@ class Inicio extends StatelessWidget {
             ],),
           );
   }
-  
 
 
 
@@ -141,7 +121,7 @@ class Inicio extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 5),
       child: Column(
         children: <Widget>[
-          Text("DESCRIPCION: \n Explora y disfruta un nuevo nivel de Gaming más inmersivo con la pantalla Full HD y la potente tecnología del Nitro 5.\n\n ",
+          Text("DESCRIPCION: \n\nExplora y disfruta un nuevo nivel de Gaming más inmersivo con la pantalla Full HD y la potente tecnología del Nitro 5.\n\n ",
           style: TextStyle(color: Colors.black54,fontSize: 14,)),
           
         ],

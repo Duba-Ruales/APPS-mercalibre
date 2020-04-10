@@ -7,7 +7,6 @@ class Gps extends StatelessWidget{
   @override
   Widget build(BuildContext context,) {
     return Container(
-
       child: _accion(),
     );
   }
@@ -34,7 +33,6 @@ Widget _icono(){
       return Column(
         children: <Widget>[
           Icon(icon,color: Colors.black87,size: 20),
-          //Text(texto,style: TextStyle(color: Colors.red),)
         ],
       );
   }
@@ -75,7 +73,6 @@ Widget _icon(){
       return Column(
         children: <Widget>[
           Icon(icon,color: Colors.yellow[600],size: 20),
-          //Text(texto,style: TextStyle(color: Colors.red),)
         ],
       );
   }
@@ -113,7 +110,6 @@ Widget _iconp(){
       return Column(
         children: <Widget>[
           Icon(icon,color: Colors.black,size: 31),
-          //Text(texto,style: TextStyle(color: Colors.red),)
         ],
       );
   }
@@ -151,7 +147,6 @@ Widget _iconcredit(){
       return Column(
         children: <Widget>[
           Icon(icon,color: Colors.black54,size: 22),
-          //Text(texto,style: TextStyle(color: Colors.red),)
         ],
       );
   }
@@ -182,10 +177,7 @@ Widget _iconveicul(){
         children: <Widget>[
          _crearVeiculo(Icons.local_shipping,),
          Text("   Envio gratis ", style: TextStyle(color: Colors.lightGreen,fontSize: 16,),),
-         //int dollars=42; // \$$dollars
-   
          Text(" S14.000", style: TextStyle(decoration: TextDecoration.lineThrough,color: Colors.black45,fontSize: 16,),),
-        
       ],),
     );
   }
@@ -200,56 +192,5 @@ Widget _iconveicul(){
 }
 
 
-
-
-
-
-
+//
 //----------------------------------------------------------------------------------------------------------------//
-// #INDEFINED ACCION DE CREAR ICONOS DE LLAMADAS, GPS Y COMPARTIR...
-class Accion extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
-      child: _acciones(),
-      //child: _icons(),
-    );
-  }
-
-Widget _icons(){
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-      ],),
-    );
-  }
-    Widget _acciones(){
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-         _crearAccion(Icons.favorite,"uno"),
-          _crearAccion(Icons.share,"dos"),
-          _crearAccion(Icons.search,"tres"),
-
-      ],),
-    );
-  }
-  
-  Widget _crearAccion(IconData icon, String texto){
-    return Column(
-        children: <Widget>[
-          Icon(icon,color: Colors.red,),
-          Text(texto,style: TextStyle(color: Colors.red),)
-        ],
-      );
-  }
-}
-
-//
-
-
-
-//
